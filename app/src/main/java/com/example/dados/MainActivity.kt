@@ -10,6 +10,7 @@ import kotlin.random.Random
 import kotlin.random.nextInt
 
 class MainActivity : AppCompatActivity() {
+    lateinit var mostrarDados:ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,13 +18,11 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener{
             girarDado()
         }
-
+        mostrarDados= findViewById(R.id.Dados_imagens)
     }
 
     private fun girarDado() {
-        val mostrarDados:ImageView= findViewById(R.id.Dados_imagens)
-
-        val randomInt=Random.nextInt(6)+1
+         val randomInt=Random.nextInt(6)+1
 
         val resultadoDrawable =when(randomInt){
             1->R.drawable.dice_1
